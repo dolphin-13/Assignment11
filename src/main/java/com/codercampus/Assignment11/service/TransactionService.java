@@ -1,7 +1,5 @@
 package com.codercampus.Assignment11.service;
 
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -27,12 +25,6 @@ public class TransactionService {
 	public List<Transaction> findAllTransactions() {
 
 		List<Transaction> transactions = transactionRepo.findAll();
-
-		Collections.sort(transactions, new Comparator<Transaction>() {
-			public int compare(Transaction t1, Transaction t2) {
-				return t1.getDate().compareTo(t2.getDate());
-			}
-		});
 
 		return transactions;
 	}
